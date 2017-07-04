@@ -8,8 +8,8 @@ var users = require("./data/users.json");
 var router = express.Router();
 module.exports = router;
 
-router.get("/rooms", function(req, res) {
-    res.json(rooms);
+router.get("/currentUser", function(req, res) {
+    res.json(req.user.name)
 })
 
 router.route("/rooms/:roomId/messages")

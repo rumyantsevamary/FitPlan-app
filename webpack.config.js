@@ -16,7 +16,7 @@ module.exports = {
         aggregateTimeout: 100
     },
 
-    devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : "source-map",
+    devtool: "source-map",//'development' ? "cheap-inline-module-source-map" : "source-map",
     plugins: [
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
@@ -30,20 +30,9 @@ module.exports = {
             loader: 'babel-loader',
             exclude: /node_modules/,
             query: {
-            presets: ['es2015', 'react']
+                presets: ['es2015', 'react']
             }
         }]
     }
 };
 
-if (NODE_ENV == 'production') {
-    module.exports.plugins.push(
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false,
-                drop_console: true,
-                unsafe: true
-            }
-        })
-    )
-}

@@ -1,6 +1,5 @@
 var express = require("express");
 var app = express();
-var favicon = require('express-favicon');
 var bodyParser = require("body-parser");
 var passport = require("passport");
 require("./passport-init");
@@ -13,6 +12,8 @@ app.use(require("./logging.js"));
 app.use(express.static("public"));
 app.use(express.static("node_modules/bootstrap/dist"));
 app.use(express.static("node_modules/jquery/dist"));
+app.use(express.static("node_modules/react/dist"));
+app.use(express.static("node_modules/react-dom/dist"));
 
 app.use(bodyParser.urlencoded({ extended:true}));
 app.use(bodyParser.json());
