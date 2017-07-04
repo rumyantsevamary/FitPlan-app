@@ -37,11 +37,8 @@ app.use(function(req, res, next) {
 });
 
 app.get("/", function(request, response){
-    response.render("home", {title:"Home"});
+    response.render("main", {title:"FitPlan"});
 });
-
-var adminRouter = require("./admin");
-app.use("/admin", adminRouter);
 
 var apiRouter = require("./api");
 app.use("/api", apiRouter);
