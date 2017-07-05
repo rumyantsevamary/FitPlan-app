@@ -8,8 +8,9 @@ export default class User extends Component {
     render() {
         const name = this.props.cUser 
         const fetching = this.props.fetching
-        return <div>
-           { fetching ? <p> Loading... </p> : <p> {name}!</p>}
+        return <div className="usr">
+           { fetching ? <span className="usr-name"> Loading... </span> : <span className="usr-name"> {name}</span>}
+           <a href="/login" className="exit-btn">Выйти</a>
         </div>
     }
 }
