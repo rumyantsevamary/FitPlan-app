@@ -1,31 +1,35 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux' 
-import Page	from '../components/Page'
 import Header from './Header'
-import * as pageActions from '../actions/PageActions'
+import MainMenu from '../components/MainMenu'
+import * as mainMenuActions from '../actions/MainMenuActions'
 
 
 class App extends Component {
   render() {
-      const {page} = this.props    
-      const {setYear} = this.props.pageActions
+      const {mainMenu} = this.props
+      const {getMainMenu} = this.props.mainMenuActions
     return <div>
             <Header />
-            <Page photos={page.photos} year={page.year} setYear={setYear} />
+            <MainMenu 
+                getMainMenu={getMainMenu}
+                fetching={mainMenu.fetching} 
+                menuItems={mainMenu.menuItems}
+            />
         </div>
   }
 }
 
 function mapStateToProps (state) {
     return {
-        page: state.page
+        mainMenu: state.mainMenu
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        pageActions: bindActionCreators(pageActions, dispatch)
+        mainMenuActions: bindActionCreators(mainMenuActions, dispatch)
     }
 }
 

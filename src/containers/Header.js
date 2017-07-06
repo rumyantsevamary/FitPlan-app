@@ -9,8 +9,13 @@ class Header extends Component {
   render() {
       const {user} = this.props    
       const {getCurrentUser} = this.props.userActions
-    return <header>
-            <h1 className="logo"><span className="fit">Fit</span><span className="Plan">Plan</span></h1>
+    return <header>  
+            <div className="logo"> 
+                <div className="img"></div>          
+                <h1>                               
+                    <span className="fit">Fit</span><span className="Plan">Plan</span>
+                </h1>
+            </div>
             <User 
                 name={user.name} 
                 getCurrentUser={getCurrentUser} 
