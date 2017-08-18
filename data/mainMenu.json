@@ -4,18 +4,22 @@
   "menuItems": [
       {
           "icon": "url('../img/calendar.svg')",
-          "name": "Календарь"
+          "name": "Календарь",
+          "activeContent": "calendar"
       },
       {
           "icon": "url('../img/trainings.svg')",
-          "name": "Тренировки"
+          "name": "Тренировки",
+          "activeContent": "trainings"
       },
       {
           "icon": "url('../img/exercises.svg')",
-          "name": "Упражнения"
+          "name": "Упражнения",
+          "activeContent": "exercises"
       },{
           "icon": "url('../img/clients.svg')",
-          "name": "Клиенты"
+          "name": "Клиенты",
+          "activeContent": "clients"
       }
   ]
  },
@@ -24,11 +28,13 @@
   "menuItems": [
       {
           "icon": "url('../img/calendar.svg')",
-          "name": "Календарь"
+          "name": "Календарь",
+          "activeContent": "calendar"
       },
       {
           "icon": "url('../img/trainings.svg')",
-          "name": "Тренировки"
+          "name": "Тренировки",
+          "activeContent": "trainings"
       }
   ]
  }

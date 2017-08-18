@@ -15,10 +15,9 @@ export default class MainMenu extends Component {
 
         const menuList = menuItems.map(function(item, index){
             let divStyle = {backgroundImage: item.icon}
-            return <li key={index}>
-                <a onClick={() => that.setActiveContent(item.activeContent)}>                
-                    <div className="menu-icon" style={divStyle}></div>{item.name}
-                </a>
+            return <li key={index}>                
+                <div className="menu-icon" style={divStyle}></div>
+                <a onClick={() => that.setActiveContent(item.activeContent)}>{item.name}</a>
             </li>
             });
 

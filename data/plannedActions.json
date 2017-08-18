@@ -1,0 +1,204 @@
+[
+    {   "userId": "44f885e8-87e9-4911-973c-4074188f408a",
+        "year": 2017,
+        "month": 7,
+        "days": [
+            {
+                "date": 2,
+                "events": [
+                    {
+                        "client": "Инна",
+                        "exercises": [
+                            {
+                                "name": "Берпи",
+                                "volume": 10
+                            },
+                            {
+                                "name": "Тяга сумо",
+                                "volume": 15
+                            },
+                            {
+                                "name": "Приседания",
+                                "volume": 20
+                            }
+                        ]
+                    },
+                    {
+                        "client": "Антон",
+                        "exercises": [
+                            {
+                                "name": "Берпи",
+                                "volume": 10
+                            },
+                            {
+                                "name": "Тяга сумо",
+                                "volume": 15
+                            },
+                            {
+                                "name": "Приседания",
+                                "volume": 20
+                            }
+                        ]
+                    },
+                    {
+                        "client": "Петр",
+                        "exercises": [
+                            {
+                                "name": "Берпи",
+                                "volume": 10
+                            },
+                            {
+                                "name": "Тяга сумо",
+                                "volume": 15
+                            },
+                            {
+                                "name": "Приседания",
+                                "volume": 20
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "date": 3,
+                "events": [
+                    {
+                        "client": "Илья",
+                        "exercises": [
+                            {
+                                "name": "Берпи",
+                                "volume": 10
+                            },
+                            {
+                                "name": "Тяга сумо",
+                                "volume": 15
+                            },
+                            {
+                                "name": "Приседания",
+                                "volume": 20
+                            }
+                        ]
+                    },
+                    {
+                        "client": "Катя",
+                        "exercises": [
+                            {
+                                "name": "Берпи",
+                                "volume": 10
+                            },
+                            {
+                                "name": "Тяга сумо",
+                                "volume": 15
+                            },
+                            {
+                                "name": "Приседания",
+                                "volume": 20
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {   "userId": "44f885e8-87e9-4911-973c-4074188f408a",
+        "year": 2017,
+        "month": 8,
+        "days": [
+            {
+                "date": 5,
+                "events": [
+                    {
+                        "client": "Инна",
+                        "exercises": [
+                            {
+                                "name": "Берпи",
+                                "volume": 10
+                            },
+                            {
+                                "name": "Тяга сумо",
+                                "volume": 15
+                            },
+                            {
+                                "name": "Приседания",
+                                "volume": 20
+                            }
+                        ]
+                    },
+                    {
+                        "client": "Антон",
+                        "exercises": [
+                            {
+                                "name": "Берпи",
+                                "volume": 10
+                            },
+                            {
+                                "name": "Тяга сумо",
+                                "volume": 15
+                            },
+                            {
+                                "name": "Приседания",
+                                "volume": 20
+                            }
+                        ]
+                    },
+                    {
+                        "client": "Петр",
+                        "exercises": [
+                            {
+                                "name": "Берпи",
+                                "volume": 10
+                            },
+                            {
+                                "name": "Тяга сумо",
+                                "volume": 15
+                            },
+                            {
+                                "name": "Приседания",
+                                "volume": 20
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "date": 6,
+                "events": [
+                    {
+                        "client": "Илья",
+                        "exercises": [
+                            {
+                                "name": "Берпи",
+                                "volume": 10
+                            },
+                            {
+                                "name": "Тяга сумо",
+                                "volume": 15
+                            },
+                            {
+                                "name": "Приседания",
+                                "volume": 20
+                            }
+                        ]
+                    },
+                    {
+                        "client": "Катя",
+                        "exercises": [
+                            {
+                                "name": "Берпи",
+                                "volume": 10
+                            },
+                            {
+                                "name": "Тяга сумо",
+                                "volume": 15
+                            },
+                            {
+                                "name": "Приседания",
+                                "volume": 20
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

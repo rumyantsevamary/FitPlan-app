@@ -29,7 +29,7 @@ export default function mainMenuState(state = initialState, action) {
 
         case SET_ACTIVE_CONTENT:
             return Object.assign({}, state, {
-                activeContent: action.playload.activeContent
+                activeContent: action.playload
             })
             
         default:

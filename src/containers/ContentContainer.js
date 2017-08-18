@@ -15,7 +15,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        //contentContainerActions: bindActionCreators(contentContainerActions, dispatch)
+        //contentContainerActions: bindActionCreators(contentContainerActions, dispatch) - template
     }
 }
 
