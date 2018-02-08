@@ -10,18 +10,14 @@ export function getCurrentUser() {
         dispatch({
             type: GET_CURRENT_USER_REQUEST
         })
-         $.ajax({
-                type: "GET",
-                url: "/api/currentUser",
-                dataType: "json"
-            })
-            .success(function(data) {
+         $.get("/api/currentUser", "json")
+            .done(function(data) {
                 dispatch({
                     type: GET_CURRENT_USER_SUCCESS,
                     playload: data
                 })
             })
-            .error(function(err, textStatus) {
+            .fail(function(err, textStatus) {
                 dispatch({
                 type: GET_CURRENT_USER_FAIL,
                 payload: textStatus,

@@ -24,22 +24,18 @@ export function getPlannedEvents(year, month) {
         dispatch({
             type: GET_PLANNED_EVENTS_REQUEST
         })
-         $.ajax({
-                type: "POST",
-                url: "/api/plannedActions",
-                data: {
+         $.post("/api/plannedActions",{
                     year: year,
                     month: month
                 },
-                dataType: "json"
-            })
-            .success(function(data) {
+                "json")
+            .done(function(data) {
                 dispatch({
                     type: GET_PLANNED_EVENTS_SUCCESS,
                     playload: data
                 })
             })
-            .error(function(err, textStatus) {
+            .fail(function(err, textStatus) {
                 dispatch({
                 type: GET_PLANNED_EVENTS_FAIL,
                 payload: textStatus,

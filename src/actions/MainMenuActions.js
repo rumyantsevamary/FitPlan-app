@@ -11,18 +11,14 @@ export function getMainMenu() {
         dispatch({
             type: GET_MAIN_MENU_REQUEST
         })
-         $.ajax({
-                type: "GET",
-                url: "/api/mainMenu",
-                dataType: "json"
-            })
-            .success(function(data) {
+         $.get("/api/mainMenu", "json")
+            .done(function(data) {
                 dispatch({
                     type: GET_MAIN_MENU_SUCCESS,
                     playload: data[0]
                 })
             })
-            .error(function(err, textStatus) {
+            .fail(function(err, textStatus) {
                 dispatch({
                 type: GET_MAIN_MENU_FAIL,
                 payload: textStatus,

@@ -12,7 +12,7 @@ export default class MonthContent extends Component {
         return calendarHeader;
     }
 
-    getDaysNum(month) {
+    getDaysNum(month, year) {
         let daysNum;
         if (
             month == 0 ||
@@ -36,7 +36,7 @@ export default class MonthContent extends Component {
     }
 
     renderDays(year, month, events) {
-        let daysNum = this.getDaysNum(month);
+        let daysNum = this.getDaysNum(month, year);
         let daysArr = [];
 
         for (let i=1; i <= daysNum; i++) {
