@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import CalendarContainer from '../../containers/CalendarContainer.js'
 
 class Content extends Component {
     render() {
@@ -7,7 +6,7 @@ class Content extends Component {
         let content;
 
         if (activeContent == 'calendar') {
-            content = <CalendarContainer />;
+            content = <div />;
         } else {
             content = <h1>error</h1>;
         }  

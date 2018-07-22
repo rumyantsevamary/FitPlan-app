@@ -1,15 +1,12 @@
-import React, { Component } from 'react'
+import * as React from 'react';
 import Header from './Header'
 import MainMenuContainer from '../../containers/MainMenuContainer'
 import ContentContainer from '../../containers/ContentContainer'
 
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return <div>
-            <Header />
-            <MainMenuContainer />
-            <ContentContainer />
         </div>
   }
 }

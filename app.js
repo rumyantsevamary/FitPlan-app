@@ -5,7 +5,7 @@ var passport = require("passport");
 require("./passport-init");
 
 app.set("views", "./views");//место откуда берем шаблоны для render
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 app.use(require("./logging.js"));
 
