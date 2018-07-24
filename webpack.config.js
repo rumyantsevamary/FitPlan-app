@@ -48,6 +48,7 @@ module.exports = {
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json"]
     },
+
     devtool: "source-map",
     context: __dirname,
     target: "web",
@@ -56,6 +57,7 @@ module.exports = {
         "react-dom": "ReactDOM"
     },
     stats: "errors-only",
+
     plugins: [
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
@@ -64,5 +66,11 @@ module.exports = {
             filename: 'main.css',
             chunkFilename: '[id].css',
           })
-    ]
+    ],
+
+    stats: {
+        colors: true,
+        errors: true,
+        errorDetails: true
+      }
 }

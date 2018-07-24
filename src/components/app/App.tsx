@@ -7,6 +7,8 @@ import ContentContainer from '../../containers/ContentContainer'
 class App extends React.Component {
   render() {
     return <div>
+      <Header/>
+          Hello world
         </div>
   }
 }
