@@ -37,16 +37,16 @@ module.exports = {
             },
             {
                 test: /\.(less|css)$/,
-                 use: [
-                   MiniCssExtractPlugin.loader,
-                   'css-loader',
-                   'less-loader'
-                  ]
-              }
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'less-loader'
+                ]
+            }
         ]
     },
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".json"]
+        extensions: [".ts", ".tsx", ".js", ".json", ".css", ".less"]
     },
 
     devtool: "source-map",
@@ -65,12 +65,12 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'main.css',
             chunkFilename: '[id].css',
-          })
+        })
     ],
 
     stats: {
         colors: true,
         errors: true,
         errorDetails: true
-      }
+    }
 }

@@ -1,8 +1,8 @@
 /node_modules
 node-uuid
 /.idea/
-/dist/bundle.js
-/dist/bundle.js.map
-/dist/main.css
-/dist/main.css.map
+public/dist/bundle.js
+public/dist/bundle.js.map
+public/dist/main.css
+public/dist/main.css.map
 *.log
