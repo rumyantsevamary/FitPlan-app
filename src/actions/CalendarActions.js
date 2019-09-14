@@ -4,8 +4,8 @@ import {
     GET_PLANNED_EVENTS_SUCCESS,
     GET_PLANNED_EVENTS_FAIL,
     OPEN_DAY_DETAILS
-} from '../constants/Calendar'
-import $ from 'jquery'
+} from '../constants/Calendar';
+import { post } from 'axios';
 
 export function changeMonth(month, year) {
     return (dispatch) => {
@@ -15,7 +15,7 @@ export function changeMonth(month, year) {
                 month: month,
                 year: year
             }
-        })     
+        })
     }
 }
 
@@ -24,22 +24,22 @@ export function getPlannedEvents(year, month) {
         dispatch({
             type: GET_PLANNED_EVENTS_REQUEST
         })
-         $.post("/api/plannedActions",{
-                    year: year,
-                    month: month
-                },
-                "json")
-            .done(function(data) {
+        post("/api/plannedActions", {
+            year: year,
+            month: month
+        },
+            "json")
+            .then(function (data) {
                 dispatch({
                     type: GET_PLANNED_EVENTS_SUCCESS,
                     playload: data
                 })
             })
-            .fail(function(err, textStatus) {
+            .catch(function (err, textStatus) {
                 dispatch({
-                type: GET_PLANNED_EVENTS_FAIL,
-                payload: textStatus,
-                error: true
+                    type: GET_PLANNED_EVENTS_FAIL,
+                    payload: textStatus,
+                    error: true
                 })
             })
     }
@@ -50,7 +50,7 @@ export function openDayDetails(day) {
         dispatch({
             type: OPEN_DAY_DETAILS,
             playload: day
-        })     
+        })
     }
 }
 

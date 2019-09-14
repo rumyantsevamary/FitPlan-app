@@ -3,7 +3,8 @@ import {
     GET_MAIN_MENU_SUCCESS,
     GET_MAIN_MENU_FAIL,
     SET_ACTIVE_CONTENT
-} from '../constants/MainMenu'
+} from '../constants/MainMenu';
+import { get } from 'axios';
 import $ from 'jquery'
 
 export function getMainMenu() {
@@ -11,18 +12,18 @@ export function getMainMenu() {
         dispatch({
             type: GET_MAIN_MENU_REQUEST
         })
-         $.get("/api/mainMenu", "json")
-            .done(function(data) {
+        get("/api/mainMenu", "json")
+            .then(function (data) {
                 dispatch({
                     type: GET_MAIN_MENU_SUCCESS,
                     playload: data[0]
                 })
             })
-            .fail(function(err, textStatus) {
+            .catch(function (err, textStatus) {
                 dispatch({
-                type: GET_MAIN_MENU_FAIL,
-                payload: textStatus,
-                error: true
+                    type: GET_MAIN_MENU_FAIL,
+                    payload: textStatus,
+                    error: true
                 })
             })
     }

@@ -2,26 +2,26 @@ import {
     GET_CURRENT_USER_REQUEST,
     GET_CURRENT_USER_SUCCESS,
     GET_CURRENT_USER_FAIL
-} from '../constants/User'
-import $ from 'jquery'
+} from '../constants/User';
+import { get } from 'axios';
 
 export function getCurrentUser() {
     return (dispatch) => {
         dispatch({
             type: GET_CURRENT_USER_REQUEST
         })
-         $.get("/api/currentUser", "json")
-            .done(function(data) {
+        get("/api/currentUser", "json")
+            .then(function (data) {
                 dispatch({
                     type: GET_CURRENT_USER_SUCCESS,
                     playload: data
                 })
             })
-            .fail(function(err, textStatus) {
+            .catch(function (err, textStatus) {
                 dispatch({
-                type: GET_CURRENT_USER_FAIL,
-                payload: textStatus,
-                error: true
+                    type: GET_CURRENT_USER_FAIL,
+                    payload: textStatus,
+                    error: true
                 })
             })
     }
