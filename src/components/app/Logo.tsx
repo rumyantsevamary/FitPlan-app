@@ -1,6 +1,6 @@
-import React, {PropTypes, Component} from 'react'
+import * as React from "react";
 
-export default class Logo extends Component {
+export default class Logo extends React.Component {
     render() {
         return <div className="logo"> 
                     <div className="img"></div>          
