@@ -6,7 +6,7 @@ import {
 import { AnyAction } from "redux";
 
 const initialState: any = {
-  name: "Mary",
+  cUser: null,
   fetching: "true"
 };
 
