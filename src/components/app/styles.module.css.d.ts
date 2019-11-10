@@ -6,3 +6,6 @@ export const fit: string;
 export const usr: string;
 export const usrName: string;
 export const exitBtn: string;
+export const menuIcon: string;
+export const menuList: string;
+export const mainMenu: string;

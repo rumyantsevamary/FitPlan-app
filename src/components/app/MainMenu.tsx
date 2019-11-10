@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as styles from "./styles.module.css";
 
 export default class MainMenu extends React.Component<any> {
   componentWillMount() {
@@ -17,7 +18,7 @@ export default class MainMenu extends React.Component<any> {
       let divStyle = { backgroundImage: item.icon };
       return (
         <li key={index}>
-          <div className="menu-icon" style={divStyle}></div>
+          <div className={styles.menuIcon} style={divStyle}></div>
           <a onClick={() => that.setActiveContent(item.activeContent)}>
             {item.name}
           </a>
@@ -26,11 +27,11 @@ export default class MainMenu extends React.Component<any> {
     });
 
     return (
-      <nav className="main-menu">
+      <nav className={styles.mainMenu}>
         {fetching ? (
           <span>Loading...</span>
         ) : (
-          <ul className="menu-list">{menuList}</ul>
+          <ul className={styles.menuList}>{menuList}</ul>
         )}
       </nav>
     );

@@ -12,10 +12,10 @@ export function getCurrentUser() {
     });
     axios
       .get("/api/currentUser")
-      .then(function(data: any) {
+      .then(function(response: any) {
         dispatch({
           type: GET_CURRENT_USER_SUCCESS,
-          playload: data
+          playload: response.data
         });
       })
       .catch((textStatus: string) => {

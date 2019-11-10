@@ -14,12 +14,13 @@ export default class User extends React.Component<IProps> {
   }
 
   render() {
+    console.log(this.props)
     const user = this.props.user;
     const fetching = this.props.user.fetching;
     return (
       <div className={styles.usr}>
         <span className={styles.usrName}>
-          {fetching ? "Loading..." : user && user.cUser && user.cUser.name}
+          {fetching ? "Loading..." : user && user.cUser}
         </span>
         <a href="/login" className={styles.exitBtn}>
           Выйти

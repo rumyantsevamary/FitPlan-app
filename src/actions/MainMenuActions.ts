@@ -13,10 +13,10 @@ export function getMainMenu() {
     });
     axios
       .get("/api/mainMenu")
-      .then(function(data: any) {
+      .then(function(request: any) {
         dispatch({
           type: GET_MAIN_MENU_SUCCESS,
-          playload: data[0]
+          playload: request.data[0]
         });
       })
       .catch((textStatus: string) => {
