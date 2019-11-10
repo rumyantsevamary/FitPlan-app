@@ -48,6 +48,13 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", CSSModuleLoader]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2|otf)$/i,
+        loader: "url-loader",
+        options: {
+          limit: 8192
+        }
       }
     ]
   },

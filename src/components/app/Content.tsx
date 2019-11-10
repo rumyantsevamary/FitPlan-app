@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as styles from "./styles.module.css";
 
 class Content extends React.Component<any> {
   render() {
@@ -10,7 +11,7 @@ class Content extends React.Component<any> {
     } else {
       content = <h1>error</h1>;
     }
-    return <div className="content">{content}</div>;
+    return <div className={styles.content}>{content}</div>;
   }
 }
 

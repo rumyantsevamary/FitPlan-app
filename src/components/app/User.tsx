@@ -1,4 +1,5 @@
-import * as React from 'react';
+import * as React from "react";
+import * as styles from "./styles.module.css";
 
 interface IProps {
   userActions: {
@@ -16,13 +17,11 @@ export default class User extends React.Component<IProps> {
     const user = this.props.user;
     const fetching = this.props.user.fetching;
     return (
-      <div className="usr">
-        {fetching ? (
-          <span className="usr-name"> Loading... </span>
-        ) : (
-          <span className="usr-name"> {user && user.cUser && user.cUser.name}</span>
-        )}
-        <a href="/login" className="exit-btn">
+      <div className={styles.usr}>
+        <span className={styles.usrName}>
+          {fetching ? "Loading..." : user && user.cUser && user.cUser.name}
+        </span>
+        <a href="/login" className={styles.exitBtn}>
           Выйти
         </a>
       </div>
