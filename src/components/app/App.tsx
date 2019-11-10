@@ -1,17 +1,18 @@
-import * as React from 'react';
-import Header from './Header'
-import MainMenuContainer from '../../containers/MainMenuContainer'
-import ContentContainer from '../../containers/ContentContainer'
-import * as styles from './styles.css';
+import * as React from "react";
+import Header from "./Header";
+import MainMenuContainer from "../../containers/MainMenuContainer";
+import ContentContainer from "../../containers/ContentContainer";
 
-
-class App extends React.Component {
+class App extends React.Component<any> {
   render() {
-    return <div className={styles.header}>
-      <Header/>
-          Hello world
-        </div>
+    return (
+      <>
+        <Header />
+        <MainMenuContainer />
+        <ContentContainer />
+      </>
+    );
   }
 }
 
-export default App
+export default App;

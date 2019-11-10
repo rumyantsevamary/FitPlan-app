@@ -1,76 +1,85 @@
-'use strict';
+"use strict";
 
-const NODE_ENV = process.env.NODE_ENV || 'development';
-const webpack = require('webpack');
-const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const NODE_ENV = process.env.NODE_ENV || "development";
+const webpack = require("webpack");
+const path = require("path");
 
+const CSSModuleLoader = {
+  loader: "css-loader",
+  options: {
+    modules: {
+      localIdentName: "[name]__[local]___[hash:base64:5]"
+    },
+    importLoaders: 2,
+    sourceMap: false
+  }
+};
 
 module.exports = {
-    mode: "development",
-    entry: "./src/main",
+  mode: "development",
+  entry: "./src/main",
 
-    output: {
-        filename: "bundle.js",
-        path: path.join(__dirname, './public/dist'),
-        publicPath: "/public/assets/"
-    },
+  output: {
+    filename: "bundle.js",
+    path: path.join(__dirname, "./public/dist"),
+    publicPath: "/public/assets/"
+  },
 
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                loader: "awesome-typescript-loader"
-            },
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'react']
-                }
-            },
-            {
-                enforce: "pre",
-                test: /\.js$/,
-                loader: "source-map-loader"
-            },
-            {
-                test: /\.(less|css)$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'less-loader'
-                ]
-            }
-        ]
-    },
-    resolve: {
-        extensions: [".ts", ".tsx", ".js", ".json", ".css", ".less"]
-    },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/
+      },
+      {
+        test: /\.js$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+        query: {
+          presets: ["es2015", "react"]
+        }
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", CSSModuleLoader]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2|otf)$/i,
+        loader: "url-loader",
+        options: {
+          limit: 8192
+        }
+      }
+    ]
+  },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".json", ".css"]
+  },
 
-    devtool: "source-map",
-    context: __dirname,
-    target: "web",
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    },
-    stats: "errors-only",
+  devtool: "source-map",
+  context: __dirname,
+  target: "web",
+  externals: {
+    react: "React",
+    "react-dom": "ReactDOM"
+  },
+  stats: "errors-only",
 
-    plugins: [
-        new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify(NODE_ENV)
-        }),
-        new MiniCssExtractPlugin({
-            filename: 'main.css',
-            chunkFilename: '[id].css',
-        })
-    ],
+  plugins: [
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify(NODE_ENV)
+    })
+  ],
 
-    stats: {
-        colors: true,
-        errors: true,
-        errorDetails: true
-    }
-}
+  stats: {
+    colors: true,
+    errors: true,
+    errorDetails: true
+  }
+};
