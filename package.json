@@ -40,7 +40,7 @@
     "less-loader": "^4.1.0",
     "lodash": "^4.17.4",
     "mini-css-extract-plugin": "^0.4.1",
-    "morgan": "^1.8.2",
+    "morgan": "^1.9.1",
     "node-uuid": "^1.4.8",
     "normalize.css": "^7.0.0",
     "passport": "^0.3.2",
