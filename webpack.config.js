@@ -3,7 +3,17 @@
 const NODE_ENV = process.env.NODE_ENV || "development";
 const webpack = require("webpack");
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const CSSModuleLoader = {
+  loader: "css-loader",
+  options: {
+    modules: {
+      localIdentName: "[name]__[local]___[hash:base64:5]"
+    },
+    importLoaders: 2,
+    sourceMap: false
+  }
+};
 
 module.exports = {
   mode: "development",
@@ -36,13 +46,13 @@ module.exports = {
         loader: "source-map-loader"
       },
       {
-        test: /\.(less|css)$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"]
+        test: /\.css$/,
+        use: ["style-loader", CSSModuleLoader]
       }
     ]
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json", ".css", ".less"]
+    extensions: [".ts", ".tsx", ".js", ".json", ".css"]
   },
 
   devtool: "source-map",
@@ -57,10 +67,6 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(NODE_ENV)
-    }),
-    new MiniCssExtractPlugin({
-      filename: "main.css",
-      chunkFilename: "[id].css"
     })
   ],
 

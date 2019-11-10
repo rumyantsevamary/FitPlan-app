@@ -7,7 +7,6 @@ import * as userActions from "../actions/UserActions";
 class UserContainer extends React.Component {}
 
 function mapStateToProps(state: any) {
-  console.log(state);
   return {
     user: state.user
   };
