@@ -2,7 +2,7 @@ import {
   GET_CURRENT_USER_REQUEST,
   GET_CURRENT_USER_SUCCESS,
   GET_CURRENT_USER_FAIL
-} from "../constants/User";
+} from "../constants/userInfoActionTypes";
 import axios from "axios";
 
 export function getCurrentUser() {

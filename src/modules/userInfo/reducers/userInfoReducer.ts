@@ -2,12 +2,12 @@ import {
   GET_CURRENT_USER_REQUEST,
   GET_CURRENT_USER_SUCCESS,
   GET_CURRENT_USER_FAIL
-} from '../constants/User';
+} from '../constants/userInfoActionTypes';
 import { AnyAction } from 'redux';
 
 const initialState: any = {
   cUser: null,
-  fetching: "true"
+  fetching: 'true'
 };
 
 export default function userstate(state = initialState, action: AnyAction) {
