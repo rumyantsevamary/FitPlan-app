@@ -17,7 +17,7 @@ const CSSModuleLoader = {
 
 module.exports = {
   mode: "development",
-  entry: "./src/main",
+  entry: "./src/bootstrap/main",
 
   output: {
     filename: "bundle.js",
