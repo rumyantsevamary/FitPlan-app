@@ -1,24 +1,24 @@
 import * as React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import MainMenu from "../components/app/MainMenu";
-import * as mainMenuActions from "../actions/MainMenuActions";
+import User from "../components/User";
+import * as userActions from "../actions/UserActions";
 
-class MainMenuContainer extends React.Component {}
+class UserContainer extends React.Component {}
 
 function mapStateToProps(state: any) {
   return {
-    mainMenu: state.mainMenu
+    user: state.user
   };
 }
 
 function mapDispatchToProps(dispatch: any) {
   return {
-    mainMenuActions: bindActionCreators(mainMenuActions, dispatch)
+    userActions: bindActionCreators(userActions, dispatch)
   };
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MainMenu);
+)(User);

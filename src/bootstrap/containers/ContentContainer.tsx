@@ -1,7 +1,7 @@
 import * as React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import Content from "../components/app/Content";
+import Content from "../components/Content";
 
 class ContentContainer extends React.Component {}
 

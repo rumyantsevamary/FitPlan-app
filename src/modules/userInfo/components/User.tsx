@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as styles from "./styles.module.css";
+import * as React from 'react';
+import * as styles from '../../../common/styles/styles.module.css';
 
 interface IProps {
   userActions: {
@@ -14,13 +14,12 @@ export default class User extends React.Component<IProps> {
   }
 
   render() {
-    console.log(this.props)
     const user = this.props.user;
     const fetching = this.props.user.fetching;
     return (
       <div className={styles.usr}>
         <span className={styles.usrName}>
-          {fetching ? "Loading..." : user && user.cUser}
+          {fetching ? 'Loading...' : user && user.cUser}
         </span>
         <a href="/login" className={styles.exitBtn}>
           Выйти

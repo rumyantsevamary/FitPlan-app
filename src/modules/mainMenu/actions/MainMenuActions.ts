@@ -3,8 +3,8 @@ import {
   GET_MAIN_MENU_SUCCESS,
   GET_MAIN_MENU_FAIL,
   SET_ACTIVE_CONTENT
-} from "../constants/MainMenu";
-import axios from "axios";
+} from '../constants/MainMenu';
+import axios from 'axios';
 
 export function getMainMenu() {
   return (dispatch: Function) => {

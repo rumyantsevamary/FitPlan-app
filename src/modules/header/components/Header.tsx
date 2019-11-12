@@ -1,5 +1,5 @@
 import * as React from "react";
-import UserContainer from "../../containers/UserContainer";
+import UserContainer from "../../userInfo/containers/UserContainer";
 import Logo from "./Logo";
 
 class Header extends React.Component {

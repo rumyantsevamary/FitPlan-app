@@ -2,8 +2,8 @@ import {
   GET_CURRENT_USER_REQUEST,
   GET_CURRENT_USER_SUCCESS,
   GET_CURRENT_USER_FAIL
-} from "../constants/User";
-import { AnyAction } from "redux";
+} from '../constants/User';
+import { AnyAction } from 'redux';
 
 const initialState: any = {
   cUser: null,

@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as styles from "./styles.module.css";
+import * as React from 'react';
+import * as styles from '../../../common/styles/styles.module.css';
 
 export default class MainMenu extends React.Component<any> {
   componentWillMount() {
