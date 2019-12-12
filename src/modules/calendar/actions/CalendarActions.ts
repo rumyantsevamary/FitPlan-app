@@ -4,8 +4,8 @@ import {
   GET_PLANNED_EVENTS_SUCCESS,
   GET_PLANNED_EVENTS_FAIL,
   OPEN_DAY_DETAILS
-} from "../constants/Calendar";
-import axios from "axios";
+} from '../constants/Calendar';
+import axios from 'axios';
 
 export function changeMonth(month: any, year: any) {
   return (dispatch: Function) => {
@@ -25,7 +25,7 @@ export function getPlannedEvents(year: any, month: any) {
       type: GET_PLANNED_EVENTS_REQUEST
     });
     axios
-      .post("/api/plannedActions", {
+      .post('/api/plannedActions', {
         year: year,
         month: month
       })

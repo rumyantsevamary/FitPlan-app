@@ -1,5 +1,5 @@
 import {
-  GET_CURRENT_USER_REQUEST,
+  GET_CURRENT_USER_BEGIN,
   GET_CURRENT_USER_SUCCESS,
   GET_CURRENT_USER_FAIL
 } from '../constants/userInfoActionTypes';
@@ -12,7 +12,7 @@ const initialState: any = {
 
 export default function userstate(state = initialState, action: AnyAction) {
   switch (action.type) {
-    case GET_CURRENT_USER_REQUEST:
+    case GET_CURRENT_USER_BEGIN:
       return { ...state, fetching: true };
     case GET_CURRENT_USER_SUCCESS:
       return { ...state, fetching: false, cUser: action.playload };
