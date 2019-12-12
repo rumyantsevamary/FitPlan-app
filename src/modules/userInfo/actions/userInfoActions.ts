@@ -1,29 +1,22 @@
 import {
-  GET_CURRENT_USER_REQUEST,
+  GET_CURRENT_USER_BEGIN,
   GET_CURRENT_USER_SUCCESS,
-  GET_CURRENT_USER_FAIL
-} from "../constants/userInfoActionTypes";
-import axios from "axios";
+  GET_CURRENT_USER_FAIL,
+  GET_CURRENT_USER_CANCELLED
+} from '../constants/userInfoActionTypes';
 
-export function getCurrentUser() {
-  return (dispatch: Function) => {
-    dispatch({
-      type: GET_CURRENT_USER_REQUEST
-    });
-    axios
-      .get("/api/currentUser")
-      .then(function(response: any) {
-        dispatch({
-          type: GET_CURRENT_USER_SUCCESS,
-          playload: response.data
-        });
-      })
-      .catch((textStatus: string) => {
-        dispatch({
-          type: GET_CURRENT_USER_FAIL,
-          payload: textStatus,
-          error: true
-        });
-      });
-  };
-}
+export const getCurrentUserBegin = () => ({
+  type: GET_CURRENT_USER_BEGIN
+});
+export const getCurrentUserSuccess = (data: any) => ({
+  type: GET_CURRENT_USER_SUCCESS,
+  playload: data
+});
+
+export const getCurrentUserFail = () => ({
+  type: GET_CURRENT_USER_FAIL
+});
+
+export const getCurrentUserCancelled = () => ({
+  type: GET_CURRENT_USER_CANCELLED
+});
