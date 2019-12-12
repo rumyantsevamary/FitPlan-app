@@ -7,7 +7,7 @@ import {
   GET_CURRENT_USER_CANCELLED
 } from '../constants/userInfoActionTypes';
 import {
-  getCurrentUserFalure,
+  getCurrentUserFail,
   getCurrentUserSuccess
 } from '../actions/userInfoActions';
 import { of } from 'rxjs';
@@ -19,7 +19,7 @@ const userInfoEpic = (action$: any) => {
       getCurrentUserService().pipe(
         mergeMap((response: any) => {
           if (isNil(response)) {
-            return of(getCurrentUserFalure());
+            return of(getCurrentUserFail());
           }
           return of(getCurrentUserSuccess(response));
         }),

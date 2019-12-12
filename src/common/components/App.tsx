@@ -7,11 +7,10 @@ const App: React.FC = () => {
   return (
     <>
       <Header />
+      <MainMenuContainer />
+      <ContentContainer />
     </>
   );
 };
-
-// <MainMenuContainer />
-// <ContentContainer />
 
 export default App;

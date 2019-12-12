@@ -1,29 +1,33 @@
 import {
-  GET_MAIN_MENU_REQUEST,
+  GET_MAIN_MENU_BEGIN,
   GET_MAIN_MENU_SUCCESS,
   GET_MAIN_MENU_FAIL,
   SET_ACTIVE_CONTENT
-} from "../constants/MainMenu";
-import { AnyAction } from "redux";
+} from '../constants/mainMenuActionTypes';
+import { AnyAction } from 'redux';
 
 const initialState: any = {
-  userRole: "unknown",
+  userRole: 'unknown',
   menuItems: [],
   fetching: true,
-  activeContent: "calendar"
+  activeContent: 'calendar'
 };
 
-export default function mainMenuState(state = initialState, action: AnyAction) {
+const mainMenuReducer = (state = initialState, action: AnyAction) => {
   switch (action.type) {
-    case GET_MAIN_MENU_REQUEST:
+    case GET_MAIN_MENU_BEGIN:
       return { ...state, fetching: true };
 
     case GET_MAIN_MENU_SUCCESS:
+      const {
+        payload: { menuItems, userRole }
+      } = action;
+
       return {
         ...state,
-        fetching: false,
-        menuItems: action.playload.menuItems,
-        userRole: action.playload.userRole
+        menuItems,
+        userRole,
+        fetching: false
       };
 
     case GET_MAIN_MENU_FAIL:
@@ -36,4 +40,5 @@ export default function mainMenuState(state = initialState, action: AnyAction) {
     default:
       return state;
   }
-}
+};
+export default mainMenuReducer;

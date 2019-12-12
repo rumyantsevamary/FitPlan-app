@@ -1,24 +1,53 @@
-import * as React from "react";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import MainMenu from "../components/MainMenu";
-import * as mainMenuActions from "../actions/MainMenuActions";
+import * as React from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch, shallowEqual } from 'react-redux';
+import {
+  getMainMenuBegin,
+  setActiveContent,
+  getMainMenuCancelled
+} from '../actions/mainMenuActions';
+import * as styles from '../../../common/styles/styles.module.css';
 
-class MainMenuContainer extends React.Component {}
-
-function mapStateToProps(state: any) {
+const mainMenuSelector = (state: any) => {
+  const { menuItems, fetching } = state.mainMenu;
   return {
-    mainMenu: state.mainMenu
+    menuItems,
+    fetching
   };
-}
+};
 
-function mapDispatchToProps(dispatch: any) {
-  return {
-    mainMenuActions: bindActionCreators(mainMenuActions, dispatch)
+const MainMenu: React.FC<any> = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMainMenuBegin());
+    return () => dispatch(getMainMenuCancelled());
+  }, []);
+
+  const handleClick = (activeContent: string) => {
+    dispatch(setActiveContent(activeContent));
   };
-}
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MainMenu);
+  const { menuItems, fetching } = useSelector(mainMenuSelector, shallowEqual);
+
+  const menuList = menuItems.map((item: any, index: number) => {
+    let divStyle = { backgroundImage: item.icon };
+    return (
+      <li key={index}>
+        <div className={styles.menuIcon} style={divStyle}></div>
+        <a onClick={() => handleClick(item.activeContent)}>{item.name}</a>
+      </li>
+    );
+  });
+
+  return (
+    <nav className={styles.mainMenu}>
+      {fetching ? (
+        <span>Loading...</span>
+      ) : (
+        <ul className={styles.menuList}>{menuList}</ul>
+      )}
+    </nav>
+  );
+};
+export default MainMenu;

@@ -1,7 +1,8 @@
 import {
   GET_CURRENT_USER_BEGIN,
   GET_CURRENT_USER_SUCCESS,
-  GET_CURRENT_USER_FAIL
+  GET_CURRENT_USER_FAIL,
+  GET_CURRENT_USER_CANCELLED
 } from '../constants/userInfoActionTypes';
 
 export const getCurrentUserBegin = () => ({
@@ -12,6 +13,10 @@ export const getCurrentUserSuccess = (data: any) => ({
   playload: data
 });
 
-export const getCurrentUserFalure = () => ({
+export const getCurrentUserFail = () => ({
   type: GET_CURRENT_USER_FAIL
+});
+
+export const getCurrentUserCancelled = () => ({
+  type: GET_CURRENT_USER_CANCELLED
 });
