@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as styles from '../../../common/styles/styles.module.css';
+import * as styles from './UserInfo.modules.css';
 
 interface IProps {
   currentUser: any;
@@ -10,8 +10,8 @@ const UserInfo: React.FC<IProps> = (props: IProps) => {
   const { currentUser, isLoading } = props;
 
   return (
-    <div className={styles.usr}>
-      <span className={styles.usrName}>
+    <div className={styles.user}>
+      <span>
         {isLoading ? 'Loading...' : currentUser}
       </span>
       <a href="/login" className={styles.exitBtn}>

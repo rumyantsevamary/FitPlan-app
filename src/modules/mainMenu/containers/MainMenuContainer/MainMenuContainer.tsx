@@ -5,8 +5,8 @@ import {
   getMainMenuBegin,
   setActiveContent,
   getMainMenuCancelled
-} from '../actions/mainMenuActions';
-import * as styles from '../../../common/styles/styles.module.css';
+} from '../../actions/mainMenuActions';
+import * as styles from './MainMenuContainer.module.css';
 
 const mainMenuSelector = (state: any) => {
   const { menuItems, fetching } = state.mainMenu;
@@ -31,10 +31,10 @@ const MainMenu: React.FC<any> = () => {
   const { menuItems, fetching } = useSelector(mainMenuSelector, shallowEqual);
 
   const menuList = menuItems.map((item: any, index: number) => {
-    let divStyle = { backgroundImage: item.icon };
+    let iconStyle = { backgroundImage: item.icon };
     return (
       <li key={index}>
-        <div className={styles.menuIcon} style={divStyle}></div>
+        <div className={styles.menuIcon} style={iconStyle}></div>
         <a onClick={() => handleClick(item.activeContent)}>{item.name}</a>
       </li>
     );
