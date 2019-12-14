@@ -27,3 +27,8 @@
   vertical-align: middle;
   cursor: pointer;
 }
+
+.menuItem {
+  text-decoration: none;
+  color: white;
+}

@@ -15,7 +15,7 @@ router.get("/login", function (req, res) {
             if (err) {
                 return next(err);
             }
-            return res.redirect('/');
+            return res.redirect('/#/trainer/calendar');
         });
         return;
     }

@@ -11,9 +11,7 @@ const UserInfo: React.FC<IProps> = (props: IProps) => {
 
   return (
     <div className={styles.user}>
-      <span>
-        {isLoading ? 'Loading...' : currentUser}
-      </span>
+      <span>{isLoading ? 'Loading...' : currentUser}</span>
       <a href="/login" className={styles.exitBtn}>
         Выйти
       </a>
