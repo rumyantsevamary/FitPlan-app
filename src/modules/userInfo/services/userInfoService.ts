@@ -8,6 +8,9 @@ export const getCurrentUserService = (): Observable<any> => {
   return ajax.get(url).pipe(
     map((data: AjaxResponse) => data.response),
     // TODO: доработать общий error handler
-    catchError((error: any) => console.log(error))
+    catchError(error => {
+      console.log(error);
+      return Observable.throw(error);
+    })
   );
 };

@@ -1,0 +1,41 @@
+import * as React from 'react';
+import { Route, Switch, useLocation } from 'react-router-dom';
+import { TRAINER_ROUTES_MAP } from './RoutesMap';
+
+const Routes: React.FC = () => (
+  <Switch>
+    <Route path={TRAINER_ROUTES_MAP.CALENDAR}>
+      <div>Calendar Page</div>
+    </Route>
+    <Route path={TRAINER_ROUTES_MAP.TRAININGS}>
+      <div>Trainings Page</div>
+    </Route>
+    <Route path={TRAINER_ROUTES_MAP.EXERCISES}>
+      <div>Exercises Page</div>
+    </Route>
+    <Route path={TRAINER_ROUTES_MAP.CLIENTS}>
+      <div>Clients Page</div>
+    </Route>
+    <Route path={TRAINER_ROUTES_MAP.PROFILE}>
+      <div>Profile Page</div>
+    </Route>
+
+    <Route path="*">
+      <NoMatch />
+    </Route>
+  </Switch>
+);
+
+// TODO: заменить на Loader
+function NoMatch() {
+  const { pathname } = useLocation();
+  return (
+    <div>
+      <h3>
+        404. No match for <code>{pathname}</code>
+      </h3>
+    </div>
+  );
+}
+
+export default Routes;

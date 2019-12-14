@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import App from '../common/components/App';
+import App from './Layout/components/App/App';
 import { createEpicMiddleware } from 'redux-observable';
 import { createHashHistory } from 'history';
 import { ConnectedRouter, routerMiddleware } from 'connected-react-router';

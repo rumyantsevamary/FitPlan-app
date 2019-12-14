@@ -1,21 +1,19 @@
 {
-    "compilerOptions": {
-        "noImplicitAny": true,
-        "module": "commonjs",
-        "target": "es5",
-        "jsx": "react",
-        "allowJs": true,
-        "sourceMap": true,
-        "typeRoots": [
-            "./node_modules/@types"
-          ],
-          "types": [ "react" ]
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "types": [ "react" ]
+  "compilerOptions": {
+    "lib": ["es2015", "dom"],
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "sourceMap": true,
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["react"]
+  },
+  "include": ["src/**/*"],
+  "types": ["react"]
 }
+
 // {
 //   "compilerOptions": {
 //     "target": "es5",

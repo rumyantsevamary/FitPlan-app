@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
-import UserInfo from '../components/UserInfo';
+import UserInfo from '../components/UserInfo/UserInfo';
 import {
   getCurrentUserBegin,
   getCurrentUserCancelled
