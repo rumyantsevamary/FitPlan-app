@@ -1,0 +1,31 @@
+.search_block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 20px 40px;
+}
+
+.search_field {
+  width: 60%;
+  height: 32px;
+  background-color: #fffffa;
+  font-size: 14px;
+  border: 0;
+  padding: 0 8px;
+}
+
+.search_field:focus {
+  outline: none;
+}
+
+.search_btn {
+  width: 112px;
+  height: 32px;
+  border-radius: 2px;
+  background-color: #ff1053;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 32px;
+}

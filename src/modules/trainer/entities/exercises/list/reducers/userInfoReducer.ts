@@ -1,22 +1,24 @@
 import {
-  GET_CURRENT_USER_BEGIN,
-  GET_CURRENT_USER_SUCCESS,
-  GET_CURRENT_USER_FAIL
-} from '../constants/userInfoActionTypes';
+  GET_LIST_BEGIN,
+  GET_LIST_SUCCESS,
+  GET_LIST_FAIL
+} from '../constants/exercisesListActionTypes';
 import { AnyAction } from 'redux';
 
 const initialState: any = {
-  cUser: null,
+  searchString: '',
+  list: null,
   fetching: true
 };
 
 export default function userstate(state = initialState, action: AnyAction) {
   switch (action.type) {
-    case GET_CURRENT_USER_BEGIN:
+    case GET_LIST_BEGIN:
       return { ...state, fetching: true };
-    case GET_CURRENT_USER_SUCCESS:
-      return { ...state, fetching: false, cUser: action.playload };
-    case GET_CURRENT_USER_FAIL:
+    case GET_LIST_SUCCESS:
+      const { list } = action.payload;
+      return { ...state, list, fetching: false };
+    case GET_LIST_FAIL:
       console.log(action.playload);
       return state;
     default:

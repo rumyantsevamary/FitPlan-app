@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 import { TRAINER_ROUTES_MAP } from './RoutesMap';
+import ExercisesList from '../entities/exercises/list/components/ExercisesList/ExercisesList';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -11,7 +12,7 @@ const Routes: React.FC = () => (
       <div>Trainings Page</div>
     </Route>
     <Route path={TRAINER_ROUTES_MAP.EXERCISES}>
-      <div>Exercises Page</div>
+      <ExercisesList />
     </Route>
     <Route path={TRAINER_ROUTES_MAP.CLIENTS}>
       <div>Clients Page</div>
