@@ -10,7 +10,7 @@ const initialState: any = {
   fetching: true
 };
 
-export default function userstate(state = initialState, action: AnyAction) {
+const userInfoReducer = (state = initialState, action: AnyAction) => {
   switch (action.type) {
     case GET_CURRENT_USER_BEGIN:
       return { ...state, fetching: true };
@@ -23,3 +23,5 @@ export default function userstate(state = initialState, action: AnyAction) {
       return state;
   }
 }
+
+export default userInfoReducer;
