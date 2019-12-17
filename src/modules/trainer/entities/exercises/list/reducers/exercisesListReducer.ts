@@ -21,7 +21,7 @@ const exercisesListReducer = (state = initialState, action: AnyAction) => {
       const { list } = action.payload;
       return { ...state, list, fetching: false };
     case GET_LIST_FAIL:
-      console.log(action.playload);
+      console.log(action.payload);
       return state;
     case SET_SEARCH_STRING:
       const { searchString } = action.payload;

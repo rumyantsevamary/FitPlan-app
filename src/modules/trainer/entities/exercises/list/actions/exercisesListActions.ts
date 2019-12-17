@@ -7,13 +7,12 @@ import {
   CLEAR_FORM
 } from '../constants/exercisesListActionTypes';
 
-export const getExercisesListBegin = (searchString: string) => ({
-  type: GET_LIST_BEGIN,
-  playload: { searchString }
+export const getExercisesListBegin = () => ({
+  type: GET_LIST_BEGIN
 });
 export const getExercisesListSuccess = (data: any) => ({
   type: GET_LIST_SUCCESS,
-  playload: data
+  payload: { list: data }
 });
 
 export const getExercisesListFail = () => ({

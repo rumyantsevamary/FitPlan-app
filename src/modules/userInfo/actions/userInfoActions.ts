@@ -10,7 +10,7 @@ export const getCurrentUserBegin = () => ({
 });
 export const getCurrentUserSuccess = (data: any) => ({
   type: GET_CURRENT_USER_SUCCESS,
-  playload: data
+  payload: data
 });
 
 export const getCurrentUserFail = () => ({

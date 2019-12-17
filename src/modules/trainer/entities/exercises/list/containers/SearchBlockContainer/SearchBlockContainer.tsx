@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { useEffect } from 'react';
-import { useSelector, useDispatch, shallowEqual } from 'react-redux';
-import { setSearchString, clearForm } from '../../actions/exercisesListActions';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  setSearchString,
+  clearForm,
+  getExercisesListBegin
+} from '../../actions/exercisesListActions';
 import * as styles from './SearchBlockContainer.module.css';
 
 const serchStringSelector = (state: any) => {
@@ -23,6 +27,10 @@ const SearchBlockContainer: React.FC = () => {
     dispatch(setSearchString(newValue));
   };
 
+  const handleBtnClick = () => {
+    dispatch(getExercisesListBegin());
+  };
+
   return (
     <div className={styles.search_block}>
       <input
@@ -33,7 +41,9 @@ const SearchBlockContainer: React.FC = () => {
           handleChange(event)
         }
       />
-      <div className={styles.search_btn}>Поиск</div>
+      <div className={styles.search_btn} onClick={handleBtnClick}>
+        Поиск
+      </div>
     </div>
   );
 };

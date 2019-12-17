@@ -15,9 +15,9 @@ const userInfoReducer = (state = initialState, action: AnyAction) => {
     case GET_CURRENT_USER_BEGIN:
       return { ...state, fetching: true };
     case GET_CURRENT_USER_SUCCESS:
-      return { ...state, fetching: false, cUser: action.playload };
+      return { ...state, fetching: false, cUser: action.payload };
     case GET_CURRENT_USER_FAIL:
-      console.log(action.playload);
+      console.log(action.payload);
       return state;
     default:
       return state;

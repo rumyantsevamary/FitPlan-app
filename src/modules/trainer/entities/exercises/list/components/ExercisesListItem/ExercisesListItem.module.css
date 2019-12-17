@@ -1,0 +1,65 @@
+.item {
+  width: 264px;
+  height: 300px;
+  border-radius: 2px;
+  background-color: #fffffe;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+.item_header {
+  height: 40px;
+  border-radius: 2px;
+  background-color: #ff1053;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 4px;
+}
+
+.item_type_logo {
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.cardio_icon {
+  background-image: url('../../../../../../../../public/img/cardio-icon.svg');
+}
+
+.power_icon {
+  background-image: url('../../../../../../../../public/img/power-icon.svg');
+}
+
+.item_body {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3a3e3b;
+}
+
+.item_field {
+  margin-bottom: 12px;
+}
+
+.item_field_label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #bfbdbd;
+  margin-bottom: 8px;
+}
+
+.item_field_value {
+  max-height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.item_field_descripton {
+  border-top: solid 2px #d8d8d8;
+  padding-top: 8px;
+}

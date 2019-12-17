@@ -1,30 +1,30 @@
 import { ofType } from 'redux-observable';
 import { mergeMap, switchMap, takeUntil, catchError } from 'rxjs/operators';
 import { isNil } from 'lodash';
-import { getExercisesListService } from '../services/exercisesListService';
+import { saveExerciseService } from '../services/exercisesCreateService';
 import {
-  GET_LIST_BEGIN,
-  GET_LIST_CANCELLED
-} from '../constants/exercisesListActionTypes';
+  SAVE_DATA_BEGIN,
+  SAVE_DATA_CANCELLED
+} from '../constants/exercisesCreateActionTypes';
 import {
-  getExercisesListFail,
-  getExercisesListSuccess
-} from '../actions/exercisesListActions';
+  saveExerciseFail,
+  saveExerciseSuccess
+} from '../actions/exercisesCreateActions';
 import { of, Observable } from 'rxjs';
 
 const exercisesListEpic = (action$: any, state$: any) => {
   return action$.pipe(
-    ofType(GET_LIST_BEGIN),
+    ofType(SAVE_DATA_BEGIN),
     switchMap(() => {
       const { searchString } = state$.value.trainer.exercises.list;
-      return getExercisesListService(searchString).pipe(
+      return saveExerciseService(searchString).pipe(
         mergeMap((response: any) => {
           if (isNil(response)) {
-            return of(getExercisesListFail());
+            return of(saveExerciseFail());
           }
-          return of(getExercisesListSuccess(response));
+          return of(saveExerciseSuccess(response));
         }),
-        takeUntil(action$.pipe(ofType(GET_LIST_CANCELLED))),
+        takeUntil(action$.pipe(ofType(SAVE_DATA_CANCELLED))),
         // TODO: доработать общий error handler
         catchError(error => {
           console.log(error);

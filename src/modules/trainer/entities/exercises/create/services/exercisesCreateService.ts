@@ -2,13 +2,10 @@ import { ajax, AjaxResponse } from 'rxjs/ajax';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-export const getExercisesListService = (
-  searchString: string
-): Observable<any> => {
-  const params = new URLSearchParams({ searchString });
-  const url = `/api/exercises/list?${params}`;
+export const saveExerciseService = (exercise: any): Observable<any> => {
+  const url = '/api/exercises/create';
 
-  return ajax.get(url).pipe(
+  return ajax.post(url, { exercise }).pipe(
     map((data: AjaxResponse) => data.response),
     // TODO: доработать общий error handler
     catchError(error => {

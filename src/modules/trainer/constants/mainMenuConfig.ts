@@ -14,7 +14,7 @@ export const MAIN_MENU_CONFIG = [
   {
     icon: "url('../img/exercises.svg')",
     name: 'Упражнения',
-    path: TRAINER_ROUTES_MAP.EXERCISES
+    path: TRAINER_ROUTES_MAP.EXERCISES.LIST
   },
   {
     icon: "url('../img/clients.svg')",

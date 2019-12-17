@@ -1,0 +1,38 @@
+.create_form {
+  width: 824px;
+  border-radius: 2px;
+  background-color: #fffffe;
+}
+.form_header {
+  height: 56px;
+  border-radius: 2px;
+  background-color: #ff1053;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+}
+.form_body {
+  padding: 40px 24px;
+}
+
+.form_row {
+  padding: 16px;
+}
+.row_label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1b1b1b;
+  padding-bottom: 8px;
+}
+.row_content {
+}
+
+.text_input{
+  width: 600px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 2px;
+  border: solid 1px #c6c6c5;
+  font-size: 14px;
+  padding-left: 4px;
+}
