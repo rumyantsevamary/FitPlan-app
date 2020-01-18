@@ -12,7 +12,16 @@
   padding: 0 32px;
 }
 .form_body {
-  padding: 40px 24px;
+  padding: 24px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  padding-left: 16px;
+}
+
+.buttons div {
+  margin-right: 8px;
 }
 
 .form_row {
@@ -27,12 +36,11 @@
 .row_content {
 }
 
-.text_input{
+.text_input {
   width: 600px;
-  height: 32px;
-  object-fit: contain;
-  border-radius: 2px;
-  border: solid 1px #c6c6c5;
   font-size: 14px;
-  padding-left: 4px;
+}
+
+.select_input {
+  min-width: 300px;
 }

@@ -1,4 +1,5 @@
 import {
+  SET_DATA,
   SAVE_DATA_BEGIN,
   SAVE_DATA_SUCCESS,
   SAVE_DATA_FAIL,
@@ -7,9 +8,15 @@ import {
   SET_FIELD_VALUE
 } from '../constants/exercisesCreateActionTypes';
 
+export const setData = (data: any) => ({
+  type: SET_DATA,
+  payload: data
+});
+
 export const saveExerciseBegin = () => ({
   type: SAVE_DATA_BEGIN
 });
+
 export const saveExerciseSuccess = (data: any) => ({
   type: SAVE_DATA_SUCCESS,
   payload: { list: data }

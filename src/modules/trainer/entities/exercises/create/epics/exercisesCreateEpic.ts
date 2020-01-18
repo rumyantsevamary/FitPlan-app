@@ -7,22 +7,28 @@ import {
   SAVE_DATA_CANCELLED
 } from '../constants/exercisesCreateActionTypes';
 import {
+  setData,
   saveExerciseFail,
   saveExerciseSuccess
 } from '../actions/exercisesCreateActions';
-import { of, Observable } from 'rxjs';
+import { push } from 'connected-react-router';
+import { TRAINER_ROUTES_MAP } from 'modules/trainer/bootstrap/RoutesMap';
+import { of, Observable, concat } from 'rxjs';
 
 const exercisesListEpic = (action$: any, state$: any) => {
   return action$.pipe(
     ofType(SAVE_DATA_BEGIN),
     switchMap(() => {
-      const { searchString } = state$.value.trainer.exercises.list;
-      return saveExerciseService(searchString).pipe(
+      const { fields } = state$.value.trainer.exercises.create;
+      return saveExerciseService(fields).pipe(
         mergeMap((response: any) => {
           if (isNil(response)) {
             return of(saveExerciseFail());
           }
-          return of(saveExerciseSuccess(response));
+          return concat(
+            of(saveExerciseSuccess(response)),
+            of(push(TRAINER_ROUTES_MAP.EXERCISES.LIST))
+          );
         }),
         takeUntil(action$.pipe(ofType(SAVE_DATA_CANCELLED))),
         // TODO: доработать общий error handler

@@ -16,6 +16,10 @@ router.get('/exercises/list', function(req, res) {
   res.json(exercisesList);
 });
 
+router.post('/exercises/create', function(req, res) {
+  res.json({ status: 'success' });
+});
+
 router.post('/plannedActions', function(req, res) {
   var date = req.body;
   var userId = req.user.id;
