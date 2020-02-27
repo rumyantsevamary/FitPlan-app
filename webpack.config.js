@@ -1,14 +1,14 @@
-"use strict";
+'use strict';
 
-const NODE_ENV = process.env.NODE_ENV || "development";
-const webpack = require("webpack");
-const path = require("path");
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const webpack = require('webpack');
+const path = require('path');
 
 const CSSModuleLoader = {
-  loader: "css-loader",
+  loader: 'css-loader',
   options: {
     modules: {
-      localIdentName: "[name]__[local]___[hash:base64:5]"
+      localIdentName: '[name]__[local]___[hash:base64:5]'
     },
     importLoaders: 2,
     sourceMap: false
@@ -16,42 +16,42 @@ const CSSModuleLoader = {
 };
 
 module.exports = {
-  mode: "development",
-  entry: "./src/bootstrap/main",
+  mode: 'development',
+  entry: './src/bootstrap/main',
 
   output: {
-    filename: "bundle.js",
-    path: path.join(__dirname, "./public/dist"),
-    publicPath: "/public/assets/"
+    filename: 'bundle.js',
+    path: path.join(__dirname, './public/dist'),
+    publicPath: '/public/assets/'
   },
 
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: 'ts-loader',
         exclude: /node_modules/
       },
       {
         test: /\.js$/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ["es2015", "react"]
+          presets: ['es2015', 'react']
         }
       },
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.js$/,
-        loader: "source-map-loader"
+        loader: 'source-map-loader'
       },
       {
         test: /\.css$/,
-        use: ["style-loader", CSSModuleLoader]
+        use: ['style-loader', CSSModuleLoader]
       },
       {
         test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2|otf)$/i,
-        loader: "url-loader",
+        loader: 'url-loader',
         options: {
           limit: 8192
         }
@@ -59,17 +59,21 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json", ".css"]
+    extensions: ['.ts', '.tsx', '.js', '.json', '.css'],
+    alias: {
+      components: path.resolve(__dirname, 'src/modules/common/components/'),
+      modules: path.resolve(__dirname, 'src/modules/')
+    }
   },
 
-  devtool: "source-map",
+  devtool: 'source-map',
   context: __dirname,
-  target: "web",
+  target: 'web',
   externals: {
-    react: "React",
-    "react-dom": "ReactDOM"
+    react: 'React',
+    'react-dom': 'ReactDOM'
   },
-  stats: "errors-only",
+  stats: 'errors-only',
 
   plugins: [
     new webpack.DefinePlugin({

@@ -1,9 +1,8 @@
 var express = require('express');
-var rooms = require('./data/rooms.json');
-var messages = require('./data/messages.json');
 var _ = require('lodash');
 var uuid = require('node-uuid');
 var users = require('./data/users.json');
+var exercisesList = require('./data/exercisesList.json');
 var plannedActions = require('./data/plannedActions.json');
 
 var router = express.Router();
@@ -11,6 +10,14 @@ module.exports = router;
 
 router.get('/currentUser', function(req, res) {
   res.json(req.user.name);
+});
+
+router.get('/exercises/list', function(req, res) {
+  res.json(exercisesList);
+});
+
+router.post('/exercises/create', function(req, res) {
+  res.json({ status: 'success' });
 });
 
 router.post('/plannedActions', function(req, res) {

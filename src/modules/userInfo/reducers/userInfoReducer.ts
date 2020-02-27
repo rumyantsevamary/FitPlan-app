@@ -7,19 +7,21 @@ import { AnyAction } from 'redux';
 
 const initialState: any = {
   cUser: null,
-  fetching: 'true'
+  fetching: true
 };
 
-export default function userstate(state = initialState, action: AnyAction) {
+const userInfoReducer = (state = initialState, action: AnyAction) => {
   switch (action.type) {
     case GET_CURRENT_USER_BEGIN:
       return { ...state, fetching: true };
     case GET_CURRENT_USER_SUCCESS:
-      return { ...state, fetching: false, cUser: action.playload };
+      return { ...state, fetching: false, cUser: action.payload };
     case GET_CURRENT_USER_FAIL:
-      console.log(action.playload);
+      console.log(action.payload);
       return state;
     default:
       return state;
   }
 }
+
+export default userInfoReducer;

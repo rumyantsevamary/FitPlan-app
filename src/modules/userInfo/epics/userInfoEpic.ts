@@ -10,8 +10,7 @@ import {
   getCurrentUserFail,
   getCurrentUserSuccess
 } from '../actions/userInfoActions';
-import { push } from 'connected-react-router';
-import { concat, of, Observable } from 'rxjs';
+import { of, Observable } from 'rxjs';
 
 const userInfoEpic = (action$: any) => {
   return action$.pipe(
@@ -22,11 +21,7 @@ const userInfoEpic = (action$: any) => {
           if (isNil(response)) {
             return of(getCurrentUserFail());
           }
-          return concat(
-            // TODO: Получать с бэка роль пользователя и перенаправлять на нужную страницу
-            //of(push('/trainer')),
-            of(getCurrentUserSuccess(response))
-          );
+          return of(getCurrentUserSuccess(response));
         }),
         takeUntil(action$.pipe(ofType(GET_CURRENT_USER_CANCELLED))),
         // TODO: доработать общий error handler

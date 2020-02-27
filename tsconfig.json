@@ -8,28 +8,13 @@
     "allowJs": true,
     "sourceMap": true,
     "typeRoots": ["./node_modules/@types"],
-    "types": ["react"]
+    "types": ["react"],
+    "baseUrl": "./src",
+    "paths": {
+      "components": ["modules/common/components/index.ts"],
+      "modules": ["modules/*"]
+    }
   },
   "include": ["src/**/*"],
   "types": ["react"]
 }
-
-// {
-//   "compilerOptions": {
-//     "target": "es5",
-//     "lib": ["dom", "dom.iterable", "esnext"],
-//     "allowJs": true,
-//     "skipLibCheck": true,
-//     "esModuleInterop": true,
-//     "allowSyntheticDefaultImports": true,
-//     "strict": true,
-//     "forceConsistentCasingInFileNames": true,
-//     "module": "esnext",
-//     "moduleResolution": "node",
-//     "resolveJsonModule": true,
-//     "isolatedModules": true,
-//     "noEmit": true,
-//     "jsx": "react"
-//   },
-//   "include": ["src"]
-// }
