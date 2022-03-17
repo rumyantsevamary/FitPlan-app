@@ -1,0 +1,1 @@
+export const MODULE_ACTION_NAMESPACE = `TRAININGS`;

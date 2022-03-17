@@ -55,13 +55,13 @@
     "file-loader": "4.2.0",
     "less": "3.10.3",
     "less-loader": "5.0.0",
-    "lodash": "4.17.15",
+    "lodash": "^4.17.21",
     "morgan": "1.9.1",
     "node-uuid": "1.4.8",
     "normalize.css": "8.0.1",
     "passport": "0.4.0",
     "passport-local": "1.0.0",
-    "pug": "2.0.4",
+    "pug": "^3.0.2",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "2.3.0",
     "source-map-loader": "0.2.4",
@@ -70,8 +70,8 @@
     "typescript": "3.7.2",
     "url-loader": "2.2.0",
     "webpack": "4.40.2",
-    "webpack-cli": "3.3.8",
+    "webpack-cli": "^4.9.2",
     "webpack-dev-middleware": "3.7.1",
-    "webpack-hot-middleware": "2.25.0"
+    "webpack-hot-middleware": "^2.25.1"
   }
 }

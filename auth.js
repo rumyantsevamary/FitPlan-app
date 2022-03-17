@@ -6,19 +6,19 @@ var router = express.Router();
 module.exports = router;
 
 router.get("/login", function (req, res) {
-    if (req.app.get("env") === "development") {//код чтобы быть постоянно зарегистрированным
-        var user = users[0];
-        if (req.query.user) {
-            user = _.find(users, u => u.name == req.query.user)
-        }
-        req.logIn(user, function (err) {
-            if (err) {
-                return next(err);
-            }
-            return res.redirect('/#/trainer/calendar');
-        });
-        return;
-    }
+    // if (req.app.get("env") === "development") {//code to be always sined in
+    //     var user = users[0];
+    //     if (req.query.user) {
+    //         user = _.find(users, u => u.name == req.query.user)
+    //     }
+    //     req.logIn(user, function (err) {
+    //         if (err) {
+    //             return next(err);
+    //         }
+    //         return res.redirect('/#/trainer/calendar');
+    //     });
+    //     return;
+    // }
     res.render("login");
 });
 

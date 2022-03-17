@@ -1,17 +1,17 @@
 # FitPlan-app
-Web app (Node.js, Express, Passport, Webpack, Babel,  React, Redux)
+SPA (Node.js, Express, Passport, Webpack, Babel,  React, Redux)
 
-Для запуска приложения необходимо запустить в консоли (в директории, где располагается приложение)<br>
+To run the application you need to run the following commands:<br>
 npm i<br>
-webpack<br>
+npm build<br>
 npm start
 
-База данных пока не прикручена, все данные хранятся в JSON в папке data.
+There is no database, data is mocked as JSON files.
 
-Для того, чтобы залогиниться как тренер:<br>
+To login as coach:<br>
 Login: Ivan<br>
 Password: password
 
-Для того, чтобы залогиниться как клиент:<br>
+To login as a client:<br>
 Login: Mary<br>
 Password: rumyantseva
