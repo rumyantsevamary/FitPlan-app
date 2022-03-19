@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as styles from './UserInfo.modules.css';
+import React from 'react';
+import styles from './UserInfo.module.css';
 
 interface IProps {
   currentUser: any;

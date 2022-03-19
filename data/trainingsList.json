@@ -1,0 +1,34 @@
+[
+    {
+        "id": "1223",
+        "name": "CrossFit",
+        "type": "POWER",
+        "muscules": ["buttocks", "abs", "biceps", "back muscles", "quadriceps"],
+        "equipment": "jump rope, barbell, dumbbells",
+        "description": "CrossFit is promoted as both a physical exercise philosophy and a competitive fitness sport, incorporating elements from high-intensity interval training, Olympic weightlifting, plyometrics, powerlifting, gymnastics, kettlebell lifting, calisthenics, strongman, and other exercises. It is practiced by members of thousands of affiliated gyms, roughly half of which are located in the United States, and by individuals who complete daily workouts."
+    },
+    {
+        "id": "1346783",
+        "name": "Running",
+        "type": "CARDIO",
+        "muscules": ["quadriceps", "buttocks"],
+        "equipment": "running sneakers",
+        "description": "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. Running is a type of gait characterized by an aerial phase in which all feet are above the ground (though there are exceptions).[1] This is in contrast to walking, where one foot is always in contact with the ground, the legs are kept mostly straight and the center of gravity vaults over the stance leg or legs in an inverted pendulum fashion. A feature of a running body from the viewpoint of spring-mass mechanics is that changes in kinetic and potential energy within a stride occur simultaneously, with energy storage accomplished by springy tendons and passive muscle elasticity. The term running can refer to any of a variety of speeds ranging from jogging to sprinting."
+    },
+    {
+        "id": "13345783",
+        "name": "High heels",
+        "type": "CARDIO",
+        "muscules": ["buttocks", "abs", "back muscles"],
+        "equipment": "High heels shoes",
+        "description": "Heels dance is a solo dance genre often featured in routines seen in pop and hip-hop music videos. Its techniques and dance vocabulary derive from a wide range of dance styles used in music video choreography as well as traditional dance genres. It is characterized by dynamic footwork & technique from jazz dance, showgirl dance (the first style of technical dance to be performed in heels), ballroom dance and Latin dance. It is also used in some go-go dancing performances. Many other dance styles have influenced this modern day dance style: for example, torso isolations borrowed from belly dance and hip hop dance, floor work, fluid arm work and body language in some forms of heels dance coming from exotic dancing (such as pole dance floorwork) and contemporary dance. Heels dance is technically demanding, and dancers who perform it are typically professionally trained in jazz dance & other styles, including ballet."
+    },
+    {
+        "id": "1436623",
+        "name": "Hip-hop",
+        "type": "CARDIO",
+        "muscules": ["quadriceps", "buttocks"],
+        "equipment": "none",
+        "description": "Hip hop dance is a range of street dance styles primarily performed to hip hop music or that have evolved as part of hip hop culture. It is influenced by a wide range of styles that were created in the 1970s and made popular by dance crews in the United States. The television show Soul Train and the 1980s films Breakin', Beat Street, and Wild Style showcased these crews and dance styles in their early stages; therefore, giving hip-hop dance mainstream exposure."
+    }
+]

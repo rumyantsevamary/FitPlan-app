@@ -1,16 +1,16 @@
-import { ajax, AjaxResponse } from 'rxjs/ajax';
+import { ajax } from 'rxjs/ajax';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 export const saveTrainingService = (training: any): Observable<any> => {
-  const url = '/api/exercises/create';
+  const url = '/api/trainings/create';
 
   return ajax.post(url, { training }).pipe(
-    map((data: AjaxResponse) => data.response),
+    map((data: any) => data.response),
     // TODO: доработать общий error handler
     catchError(error => {
       console.log(error);
-      return Observable.throw(error);
+      return error;
     })
   );
 };

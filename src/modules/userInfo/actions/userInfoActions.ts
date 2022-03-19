@@ -1,3 +1,4 @@
+import { AnyAction } from 'redux';
 import {
   GET_CURRENT_USER_BEGIN,
   GET_CURRENT_USER_SUCCESS,
@@ -8,7 +9,7 @@ import {
 export const getCurrentUserBegin = () => ({
   type: GET_CURRENT_USER_BEGIN
 });
-export const getCurrentUserSuccess = (data: any) => ({
+export const getCurrentUserSuccess = (data: any): AnyAction => ({
   type: GET_CURRENT_USER_SUCCESS,
   payload: data
 });

@@ -2,7 +2,7 @@ var express = require('express');
 var _ = require('lodash');
 var uuid = require('node-uuid');
 var users = require('./data/users.json');
-var exercisesList = require('./data/exercisesList.json');
+var exercisesList = require('./data/trainingsList.json');
 var plannedActions = require('./data/plannedActions.json');
 
 var router = express.Router();
@@ -12,11 +12,11 @@ router.get('/currentUser', function(req, res) {
   res.json(req.user.name);
 });
 
-router.get('/exercises/list', function(req, res) {
+router.get('/trainings/list', function(req, res) {
   res.json(exercisesList);
 });
 
-router.post('/exercises/create', function(req, res) {
+router.post('/trainings/create', function(req, res) {
   res.json({ status: 'success' });
 });
 

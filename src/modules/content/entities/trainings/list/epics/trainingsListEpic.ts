@@ -10,7 +10,7 @@ import {
   getExercisesListFail,
   getExercisesListSuccess
 } from '../actions/trainingsListActions';
-import { of, Observable } from 'rxjs';
+import { of } from 'rxjs';
 
 export const trainingsListEpic = (action$: any, state$: any) => {
   return action$.pipe(
@@ -28,7 +28,7 @@ export const trainingsListEpic = (action$: any, state$: any) => {
         // TODO: add error handler
         catchError(error => {
           console.log(error);
-          return Observable.throw(error);
+          return error;
         })
       );
     })

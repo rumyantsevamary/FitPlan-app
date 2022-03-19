@@ -12,7 +12,7 @@ import {
 } from '../actions/trainingsCreateActions';
 import { push } from 'connected-react-router';
 import { CONTENT_ROUTES_MAP } from 'modules/content/bootstrap/RoutesMap';
-import { of, Observable, concat } from 'rxjs';
+import { of, concat } from 'rxjs';
 
 export const trainingsCreateEpic = (action$: any, state$: any) => {
   return action$.pipe(
@@ -33,7 +33,7 @@ export const trainingsCreateEpic = (action$: any, state$: any) => {
         // TODO: add error handler
         catchError(error => {
           console.log(error);
-          return Observable.throw(error);
+          return error;
         })
       );
     })

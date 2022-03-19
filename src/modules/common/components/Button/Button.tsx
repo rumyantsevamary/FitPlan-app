@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as styles from './Button.module.css';
+import React from 'react';
+import styles from './Button.module.css';
 
 interface IProps {
   onClick: (event: any) => void;

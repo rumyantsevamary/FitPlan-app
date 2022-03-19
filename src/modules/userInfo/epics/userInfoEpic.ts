@@ -27,7 +27,7 @@ const userInfoEpic = (action$: any) => {
         // TODO: доработать общий error handler
         catchError(error => {
           console.log(error);
-          return Observable.throw(error);
+          return error;
         })
       )
     )

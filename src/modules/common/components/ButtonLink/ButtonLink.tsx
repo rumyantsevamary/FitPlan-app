@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import * as styles from './ButtonLink.module.css';
+import styles from './ButtonLink.module.css';
 
 interface IProps {
   path: string;

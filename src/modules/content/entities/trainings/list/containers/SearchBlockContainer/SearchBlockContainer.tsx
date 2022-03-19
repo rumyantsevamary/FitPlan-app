@@ -6,7 +6,7 @@ import {
   clearForm,
   getExercisesListBegin
 } from '../../actions/trainingsListActions';
-import * as styles from './SearchBlockContainer.module.css';
+import styles from './SearchBlockContainer.module.css';
 
 const serchStringSelector = (state: any) => {
   const { searchString } = state.content.trainings.list;
@@ -17,7 +17,7 @@ export const SearchBlockContainer: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    return () => dispatch(clearForm());
+    return () => {dispatch(clearForm())};
   }, []);
 
   const searchString = useSelector(serchStringSelector);

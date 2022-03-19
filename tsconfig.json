@@ -1,20 +1,31 @@
 {
   "compilerOptions": {
-    "lib": ["es2015", "dom"],
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "outDir": "./public/dist/",
+    "strictNullChecks": false,
+    "lib": [ "es2015", "dom" ],
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
     "noImplicitAny": true,
-    "module": "commonjs",
+    "module": "esnext",
+    "moduleResolution": "node",
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
-    "sourceMap": true,
     "typeRoots": ["./node_modules/@types"],
     "types": ["react"],
     "baseUrl": "./src",
     "paths": {
       "components": ["modules/common/components/index.ts"],
-      "modules": ["modules/*"]
+      "components/*": ["modules/common/components/*"],
+      "modules/*": ["modules/*"]
     }
   },
   "include": ["src/**/*"],
-  "types": ["react"]
+  "types": ["react"],
+  "exclude": [
+    "node_modules"
+]
 }

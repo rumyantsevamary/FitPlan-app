@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import cx from 'classnames';
 import {
   ETrainingType,
   ITraining
 } from '../../../common/models/trainigsModels';
-import * as styles from './TrainingsListItem.module.css';
+import styles from './TrainingsListItem.module.css';
 
 interface IProps {
   item: ITraining;

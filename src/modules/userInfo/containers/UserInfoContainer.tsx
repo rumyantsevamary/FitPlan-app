@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import UserInfo from '../components/UserInfo/UserInfo';
@@ -17,7 +17,8 @@ const UserInfoContainer: React.FC = () => {
 
   useEffect(() => {
     dispatch(getCurrentUserBegin());
-    return () => dispatch(getCurrentUserCancelled());
+    return () => {
+      dispatch(getCurrentUserCancelled())}
   }, []);
 
   const { currentUser, isLoading } = useSelector(

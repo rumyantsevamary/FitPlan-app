@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import * as styles from './MainMenu.module.css';
+import styles from './MainMenu.module.css';
 
 interface IProps {
   menuItems: any[];
@@ -11,7 +11,7 @@ const MainMenu: React.FC<IProps> = ({ menuItems }) => {
     <nav className={styles.mainMenu}>
       <ul className={styles.menuList}>
         {menuItems.map((item: any, index: number) => {
-          let iconStyle = { backgroundImage: item.icon };
+          const iconStyle = { backgroundImage: item.icon };
           return (
             <li key={index}>
               <Link to={item.path} className={styles.menuItem}>

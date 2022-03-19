@@ -14,7 +14,7 @@ import {
   clearForm,
   saveExerciseBegin
 } from '../../actions/trainingsCreateActions';
-import * as styles from './TrainingsCreateFormContainer.module.css';
+import styles from './TrainingsCreateFormContainer.module.css';
 interface IProps {
   label: string;
   children?: JSX.Element;
@@ -42,7 +42,7 @@ const FormRow: React.FC<IProps> = (props: IProps) => {
   return (
     <div className={styles.form_row}>
       <div className={styles.row_label}>{label}</div>
-      <div className={styles.row_content}>{props.children}</div>
+      <div>{props.children}</div>
     </div>
   );
 };
@@ -61,7 +61,7 @@ export const TrainingsCreateFormContainer: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    return () => dispatch(clearForm());
+    return () => {dispatch(clearForm())};
   }, []);
 
   const { name, type, muscules, equipment, description } = useSelector(

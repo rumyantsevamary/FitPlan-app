@@ -4,20 +4,20 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import App from './Layout/components/App/App';
 import { createEpicMiddleware } from 'redux-observable';
-import { createHashHistory } from 'history';
+import { createBrowserHistory } from 'history';
 import { ConnectedRouter, routerMiddleware } from 'connected-react-router';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from '../reducers/rootReducer';
+import { composeWithDevTools } from '@redux-devtools/extension';
+import {rootReducer} from '../reducers/rootReducer';
 import rootEpic from '../epics/rootEpic';
 
-const hashHistory = createHashHistory();
+const history = createBrowserHistory()
 
 const epicMiddleware = createEpicMiddleware();
 
 const store = createStore(
-  rootReducer(hashHistory),
+  rootReducer(history),
   composeWithDevTools(
-    applyMiddleware(epicMiddleware, routerMiddleware(hashHistory))
+    applyMiddleware(epicMiddleware, routerMiddleware(history))
   )
 );
 
@@ -25,7 +25,7 @@ epicMiddleware.run(rootEpic);
 
 render(
   <Provider store={store}>
-    <ConnectedRouter history={hashHistory}>
+    <ConnectedRouter history={history}>
       <App />
     </ConnectedRouter>
   </Provider>,
