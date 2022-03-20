@@ -52,7 +52,7 @@ const config = {
     ],
     alias: {
       modules: path.resolve(__dirname, 'src/modules/'),
-      components: path.resolve(__dirname, 'src/modules/common/components/'),
+      components: path.resolve(__dirname, 'src/components/'),
     }
   }
 };

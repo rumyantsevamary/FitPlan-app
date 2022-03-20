@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
-import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import { Button, ButtonLink } from 'components';
+import TextField from '@mui/material/TextField';
+import FormControl from '@mui/material/FormControl';
+import FormHelperText from '@mui/material/FormHelperText';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import { Button} from 'components/Button';
+import {ButtonLink } from 'components/ButtonLink';
 import { CONTENT_ROUTES_MAP } from 'modules/content/bootstrap/RoutesMap';
 import { ETrainingType } from '../../../common/models/trainigsModels';
 import {

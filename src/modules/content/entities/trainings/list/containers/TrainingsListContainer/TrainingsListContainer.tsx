@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import { isEmpty } from 'lodash';
 import { getExercisesListBegin } from '../../actions/trainingsListActions';
-import Loader from '../../../../../../common/components/Loader/Loader';
+import {Loader} from 'components/Loader';
 import { ITraining } from '../../../common/models/trainigsModels';
 import {TrainingsListItem} from '../../components/TrainingsListItem/TrainingsListItem';
 import styles from './TrainingsListContainer.module.css';

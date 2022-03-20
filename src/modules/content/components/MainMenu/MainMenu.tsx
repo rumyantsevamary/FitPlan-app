@@ -6,7 +6,7 @@ interface IProps {
   menuItems: any[];
 }
 
-const MainMenu: React.FC<IProps> = ({ menuItems }) => {
+export const MainMenu: React.FC<IProps> = ({ menuItems }) => {
   return (
     <nav className={styles.mainMenu}>
       <ul className={styles.menuList}>
@@ -25,4 +25,3 @@ const MainMenu: React.FC<IProps> = ({ menuItems }) => {
     </nav>
   );
 };
-export default MainMenu;

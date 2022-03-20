@@ -4,7 +4,7 @@ import { CONTENT_ROUTES_MAP } from './RoutesMap';
 import {TrainingsList} from '../entities/trainings/list/components/TrainingsList';
 import {TrainingsCreateFormContainer} from '../entities/trainings/create/containers/TrainingsCreateFormContainer/TrainingsCreateFormContainer';
 import {CalendarContainer} from '../entities/calendar/containers/CalendarContainer';
-import { PageLayout } from 'components';
+import { PageLayout } from '../components/PageLayout/PageLayout';
 
 export const ContentRoutes: React.FC = () => (
   <PageLayout>

@@ -1,6 +1,6 @@
 import React from "react";
 import { ContentRoutes } from "../../bootstrap/ContentRoutes";
-import { MainMenu } from "components";
+import { MainMenu } from  '../MainMenu/MainMenu';
 import { MAIN_MENU_CONFIG } from "../../constants/mainMenuConfig";
 import styles from "./Content.module.css";
 

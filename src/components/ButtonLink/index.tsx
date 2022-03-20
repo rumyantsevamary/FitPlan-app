@@ -6,10 +6,8 @@ interface IProps {
   path: string;
   label: string;
 }
-const ButtonLink: React.FC<IProps> = ({ path, label }) => (
+export const ButtonLink: React.FC<IProps> = ({ path, label }) => (
   <Link to={path} className={styles.btn_link}>
     {label}
   </Link>
 );
-
-export default ButtonLink;

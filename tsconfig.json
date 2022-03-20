@@ -18,8 +18,7 @@
     "types": ["react"],
     "baseUrl": "./src",
     "paths": {
-      "components": ["modules/common/components/index.ts"],
-      "components/*": ["modules/common/components/*"],
+      "components/*": ["components/*"],
       "modules/*": ["modules/*"]
     }
   },
