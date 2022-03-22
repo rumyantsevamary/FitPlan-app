@@ -8,10 +8,7 @@ npm start
 
 There is no database, data is mocked as JSON files.
 
-To login as coach:<br>
+To login:<br>
 Login: Ivan<br>
 Password: password
 
-To login as a client:<br>
-Login: Mary<br>
-Password: rumyantseva

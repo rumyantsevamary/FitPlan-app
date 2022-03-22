@@ -5,7 +5,7 @@ import Header from '../Header/Header';import {
   Route,
   useLocation
 } from "react-router-dom";
-import {Content} from '../../../../modules/content/components/Content/Content'
+import {Content} from '../../../modules/content/components/Content/Content'
 import styles from './App.module.css';
 
 const App: React.FC = () => {
@@ -22,7 +22,6 @@ const App: React.FC = () => {
   );
 };
 
-// TODO: replace with Loader.
 const NoMatch:React.FC = () => {
   const { pathname } = useLocation();
   return (

@@ -3,12 +3,13 @@ import {
   CLEAR_FORM
 } from '../constants/trainingsCreateActionTypes';
 import { AnyAction } from 'redux';
+import { ETrainingType } from '../../common/models/trainigsModels'
 import { ITraining } from '../../common/models/trainigsModels';
 
 const initialState: ITraining = {
   id: null,
   name: null,
-  type: null,
+  type: ETrainingType.CARDIO,
   muscules: null,
   equipment: null,
   description: null

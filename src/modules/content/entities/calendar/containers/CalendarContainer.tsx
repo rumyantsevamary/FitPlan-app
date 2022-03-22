@@ -16,8 +16,10 @@ import {
   format
 } from 'date-fns'
 
-//TDO: add typings
-const getCurrentMonth = () => {
+type TWeekArray = Date[];
+type TMonthArray = TWeekArray[];
+
+const getCurrentMonth = (): TMonthArray => {
   const currentDate = new Date();
   const firstDayOfMonth = startOfMonth(currentDate);
   const endDayOfMonth = endOfMonth(currentDate);

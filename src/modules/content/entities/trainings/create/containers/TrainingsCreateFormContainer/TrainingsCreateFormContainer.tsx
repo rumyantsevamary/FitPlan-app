@@ -6,8 +6,8 @@ import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import { Button} from 'components/Button';
-import {ButtonLink } from 'components/ButtonLink';
+import { Button } from 'components/Button';
+import { ButtonLink } from 'components/ButtonLink';
 import { CONTENT_ROUTES_MAP } from 'modules/content/bootstrap/RoutesMap';
 import { ETrainingType } from '../../../common/models/trainigsModels';
 import {
@@ -16,6 +16,7 @@ import {
   saveExerciseBegin
 } from '../../actions/trainingsCreateActions';
 import styles from './TrainingsCreateFormContainer.module.css';
+
 interface IProps {
   label: string;
   children?: JSX.Element;
@@ -51,10 +52,10 @@ const FormRow: React.FC<IProps> = (props: IProps) => {
 const TrainingTypeSelect: React.FC<any> = ({ value, onChange }: any) => (
   <FormControl>
     <Select className={styles.select_input} value={value} onChange={onChange}>
-      <MenuItem value={ETrainingType.CARDIO}>Кардио</MenuItem>
-      <MenuItem value={ETrainingType.POWER}>Силовое</MenuItem>
+      <MenuItem value={ETrainingType.CARDIO}>Cardio</MenuItem>
+      <MenuItem value={ETrainingType.POWER}>Power</MenuItem>
     </Select>
-    <FormHelperText>Выберите тип упражнения</FormHelperText>
+    <FormHelperText>Choose type of the trining</FormHelperText>
   </FormControl>
 );
 
@@ -62,7 +63,7 @@ export const TrainingsCreateFormContainer: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    return () => {dispatch(clearForm())};
+    return () => { dispatch(clearForm()) };
   }, []);
 
   const { name, type, muscules, equipment, description } = useSelector(

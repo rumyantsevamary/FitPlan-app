@@ -1,8 +1,11 @@
-import React from 'react';
-import styles from './Loader.module.css';
+import * as React from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
+import styles from './Loader.module.css'
 
-export const Loader: React.FC = () => (
-  <div className={styles.preloader}>
-    <div className={styles.loader}></div>
-  </div>
-);
+export const Loader: React.FC = () => {
+  return (
+    <div className={styles.loader}>
+      <CircularProgress color="secondary" />
+    </div>
+  );
+}
