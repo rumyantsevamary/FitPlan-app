@@ -33,7 +33,7 @@
     "redux": "4.1.2",
     "redux-observable": "2.0.0",
     "rxjs": "7.5.5",
-    "typescript-plugin-css-modules": "3.4.0"
+    "typescript-plugin-css-modules": "5.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.17.8",
